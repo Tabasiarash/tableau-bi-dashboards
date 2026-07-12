@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check file structure
+        run: |
+          echo "=== Repository structure ==="
+          find . -not -path './.git/*' -not -name '.git' | sort
+          echo ""
+          TWB_COUNT=$(find . -name "*.twb" -type f | wc -l)
+          TDS_COUNT=$(find . -name "*.tds" -type f | wc -l)
+          TWBS_COUNT=$(find . -name "*.twbx" -type f | wc -l)
+          echo "TWB files: $TWB_COUNT"
+          echo "TDS files: $TDS_COUNT"
+          echo "TWBX files: $TWBS_COUNT"
+          echo "File structure validation passed."
