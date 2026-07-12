@@ -1,3 +1,5 @@
+[![CI](https://github.com/Tabasiarash/tableau-bi-dashboards/actions/workflows/ci.yml/badge.svg)](https://github.com/Tabasiarash/tableau-bi-dashboards/actions/workflows/ci.yml)
+
 # Tableau BI Dashboards
 
 Data preparation and documentation for two Tableau Public dashboards: Olist Executive Overview (Brazil e-commerce) and HR Attrition Analysis.
